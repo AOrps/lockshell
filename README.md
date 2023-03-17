@@ -1,5 +1,5 @@
-# Repo-Name
-- Description
+# lockshell
+- Shell with out the fun and only pain
 
 ## :mag: Manual
 
@@ -25,6 +25,7 @@
 ```
 
 ## :warning: Disclaimer
+- Don't use this in place for fundamental security practices
 
 ---
 
