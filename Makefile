@@ -6,7 +6,7 @@ PROGS = losh
 
 all: $(PROGS)
 
-losh:
+losh: clean
 	$(CC) $(CFLAGS) lockshell.c -o losh
 
 clean:

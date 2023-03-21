@@ -1,4 +1,5 @@
 #include <signal.h>
+#include <stdlib.h>
 #include <stdio.h>
 
 volatile sig_atomic_t running = 1;
@@ -18,6 +19,40 @@ void sigquit_handler(int signum) {
   running = 1;
 }
 
+/*
+char * getline(void) {
+  char * line = malloc(100), *linep = line;
+  size_t lenmax=100, len = lenmax;
+  int c;
+
+  if(line == NULL)
+    return NULL;
+
+  for(;;) {
+    c = fgetc(stdin);
+    if(c == EOF)
+      break;
+
+    if(--len == 0) {
+      len = lenmax;
+      char * linen = realloc(linep, lenmax *= 2);
+
+      if(linen == NULL) {
+	free(linep);
+	return NULL;
+      }
+      line = linen + (line - linep);
+      linep = linen;
+    }
+
+    if((*line++ = c) == '\n')
+      break;
+  }
+  *line = '\0';
+  return linep;
+}
+*/
+
 int main() {
   // handle interrupts
   signal(SIGINT, sigint_handler);
@@ -28,10 +63,18 @@ int main() {
   // handle suspends
   signal(SIGTSTP, sigtstp_handler);
 
-  while (running) {
-    continue;
+  char ** input;
+  
+  while(running) {
+    if(running == 1) {
+      scanf("%s", &input);
+      printf("> %s", &input);
+    // continue;
+    } else {
+      continue;
+    }
   }
 
-
+  
   return 0;
 }
