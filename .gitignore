@@ -1,5 +1,9 @@
-# Binary
+# Files
+*~
+.env
+
+## Binary
 losh
 
-# Autosave
-*~
+# Directories
+env/

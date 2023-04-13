@@ -29,8 +29,6 @@ int main() {
 
   // handle suspends
   signal(SIGTSTP, sigtstp_handler);
-
-  char ** input;
   
   while(running) {
     if(running == 1) {
