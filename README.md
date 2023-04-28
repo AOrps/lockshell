@@ -8,6 +8,10 @@
 ```
 
 ## :hammer: How to Build
+```bash
+# To build file
+make
+```
 
 ## :alembic: Usage
 
