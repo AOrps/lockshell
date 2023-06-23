@@ -19,8 +19,13 @@ void sigquit_handler(int signum) {
   running = 1;
 }
 
+// siginfo_t 
+
 
 int main() {
+
+  //psiginfo()
+  
   // handle interrupts
   signal(SIGINT, sigint_handler);
 
