@@ -1,12 +1,12 @@
 # lockshell
 - Shell with out the fun and only pain
-
+<!-- 
 ## :mag: Manual
 
 ```txt
 
 ```
-
+-->
 ## :hammer: How to Build
 ```bash
 # To build file
@@ -14,6 +14,11 @@ make
 ```
 
 ## :alembic: Usage
+```sh
+# To change shell to a honey user (implying root)
+usermod --shell $(pwd)/losh <honey user>
+```
+
 
 ---
 
