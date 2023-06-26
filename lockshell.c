@@ -4,17 +4,17 @@
 
 volatile sig_atomic_t running = 1;
 
-void sigint_handler(int signum) {
+void sigint_handler() {
   printf("Caught SIGINT!\n");
   running = 1;
 }
 
-void sigtstp_handler(int signum) {
+void sigtstp_handler() {
   printf("Caught SIGTSTP\n");
   running = 1;
 }
 
-void sigquit_handler(int signum) {
+void sigquit_handler() {
   printf("Caught SIGQUIT!\n");
   running = 1;
 }
@@ -36,13 +36,7 @@ int main() {
   signal(SIGTSTP, sigtstp_handler);
   
   while(running) {
-    if(running == 1) {
-      scanf("%s", &input);
-      printf("> %s", &input);
-    // continue;
-    } else {
-      continue;
-    }
+    continue;
   }
 
   
