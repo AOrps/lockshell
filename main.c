@@ -1,30 +1,10 @@
-#include <signal.h>
+// #include <stdio.h>
 #include <stdlib.h>
-#include <stdio.h>
+#include "lockshell.h"
 
 volatile sig_atomic_t running = 1;
 
-void sigint_handler() {
-  printf("Caught SIGINT!\n");
-  running = 1;
-}
-
-void sigtstp_handler() {
-  printf("Caught SIGTSTP\n");
-  running = 1;
-}
-
-void sigquit_handler() {
-  printf("Caught SIGQUIT!\n");
-  running = 1;
-}
-
-// siginfo_t 
-
-
 int main() {
-
-  //psiginfo()
   
   // handle interrupts
   signal(SIGINT, sigint_handler);
