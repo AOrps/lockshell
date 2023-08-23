@@ -6,7 +6,8 @@
 volatile sig_atomic_t running = 1;
 
 int main() {
-  
+
+  logger("start", "someone was caught");
   // handle interrupts
   signal(SIGINT, sigint_handler);
 

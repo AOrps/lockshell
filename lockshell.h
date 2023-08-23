@@ -12,7 +12,7 @@ void sigtstp_handler();
 void sigquit_handler();
 
 // Log Writing
-void default_write_to();
+void logger(const char* tag, const char* message);
 
 // Testing
 
