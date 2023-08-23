@@ -12,8 +12,9 @@ void sigtstp_handler();
 void sigquit_handler();
 
 // Log Writing
-
+void default_write_to();
 
 // Testing
+
 
 #endif // LOCKSHELL_H
