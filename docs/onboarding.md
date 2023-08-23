@@ -21,4 +21,5 @@
   - To validate that program runs as intended (for the most part)
 
 ## :book: Resources
-- 
+- https://www.geeksforgeeks.org/header-files-in-c-cpp-and-its-uses/#
+- https://developerinsider.co/simple-and-static-assertion-assert-in-c-programming-language/
