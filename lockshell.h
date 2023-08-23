@@ -12,8 +12,8 @@ void sigtstp_handler();
 void sigquit_handler();
 
 // Log Writing
-void logger(const char* tag, const char* message);
-
+void stdout_logger(const char* tag, const char* message);
+void file_logger(const char* tag, const char* message, const char* filename);
 // Testing
 
 

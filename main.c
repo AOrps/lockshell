@@ -7,7 +7,9 @@ volatile sig_atomic_t running = 1;
 
 int main() {
 
-  logger("start", "someone was caught");
+  /* stdout_logger("start", "someone was caught"); */
+  file_logger("hit", "trapped someone", "./losh.log");
+  /* exit(0); */
   // handle interrupts
   signal(SIGINT, sigint_handler);
 

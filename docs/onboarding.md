@@ -24,6 +24,8 @@
   - To validate that program runs as intended (for the most part)
 - [ ] Analytics
   - Research findings on whether or not pooling resources is more efficient
+- [ ] Custom Config File
+  - Setup Configurations to keep compiliation size (and exploitablity low)
 
 ## :book: Resources
 - https://www.geeksforgeeks.org/header-files-in-c-cpp-and-its-uses/#
