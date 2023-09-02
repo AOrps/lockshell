@@ -9,8 +9,9 @@
 
 
 ## :technologist: Nice to haves / Features to implement
-- [ ] Logging
+- [x] Logging
   - Eventually to be picked up from a SIEM
+  - Writes to [./losh.log], however segfault when writing to a area that doesn't exist
 - [ ] Constraints 
   - Time constraint to prevent generating a bunch of useless files running this program
 - [ ] VM / Container Isolation
