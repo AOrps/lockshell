@@ -15,7 +15,7 @@ ADD kill-debug.sh /usr/src/app
 ADD LICENSE /usr/src/app
 
 # Installing Dependencies
-# APK add 
+# APK add make
 
 # Running Commands
 
