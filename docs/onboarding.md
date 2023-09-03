@@ -13,7 +13,8 @@
   - Eventually to be picked up from a SIEM
   - Writes to [./losh.log], however segfault when writing to a area that doesn't exist
 - [ ] Constraints 
-  - Time constraint to prevent generating a bunch of useless files running this program
+  - [x] Time constraint to prevent generating a bunch of useless files running this program
+  - [ ] Isolated Memory but not a memory hog
 - [ ] VM / Container Isolation
   - Prevent Shell Escape
 - [ ] Taunting art (like flipper or pwnagochi)

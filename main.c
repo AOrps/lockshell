@@ -2,7 +2,12 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
+#include <assert.h>
 #include "lockshell.h"
+
+
+// TIMEOUT in Seconds
+#define LOSH_TIMEOUT 30
 
 volatile sig_atomic_t running = 1;
 
@@ -10,14 +15,17 @@ volatile sig_atomic_t running = 1;
 
 int main() {
 
-  
-  
+  // Ensure it begins running
+  assert (running==1);
+
   /* stdout_logger("start", "someone was caught"); */
   file_logger("hit", "trapped someone", "./losh.log");
 
+  // handles
   signal(SIGALRM, sigalarm_handler);
+
   
-  alarm(3);
+  alarm(LOSH_TIMEOUT);
 
    
  // handle interrupts
