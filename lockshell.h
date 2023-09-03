@@ -10,6 +10,7 @@ extern volatile sig_atomic_t running;
 void sigint_handler();
 void sigtstp_handler();
 void sigquit_handler();
+void sigalarm_handler(int);
 
 // Log Writing
 void stdout_logger(const char* tag, const char* message);

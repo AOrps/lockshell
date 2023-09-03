@@ -14,3 +14,8 @@ void sigquit_handler() {
   printf("Caught SIGQUIT!\n");
   running = 1;
 }
+
+void sigalarm_handler(int sig) {
+  running = 0;
+  signal(sig, sigalarm_handler);
+}
