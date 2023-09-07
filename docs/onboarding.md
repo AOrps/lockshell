@@ -21,7 +21,7 @@
   - Bc funny (and c graphics seems cool)
 - [ ] Interactivity
   - Get threat information from how an adversary uses the shell
-  - Playback functionality
+  - Playback functionality (like cowrie or script or scriptreplay)
 - [ ] Testing / Assertions
   - To validate that program runs as intended (for the most part)
 - [ ] Analytics

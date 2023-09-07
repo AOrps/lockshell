@@ -11,6 +11,8 @@ void sigint_handler();
 void sigtstp_handler();
 void sigquit_handler();
 void sigalarm_handler(int);
+void sigabort_handler();
+void sigterm_handler();
 
 // Log Writing
 void stdout_logger(const char* tag, const char* message);

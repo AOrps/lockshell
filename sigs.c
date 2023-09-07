@@ -15,6 +15,16 @@ void sigquit_handler() {
   running = 1;
 }
 
+void sigabort_handler() {
+  printf("caught SIGABRT!\n");
+  running = 1;
+}
+
+void sigtermsigabort_handler() {
+  printf("caught SIGTERM!\n");
+  running = 1;
+}
+
 void sigalarm_handler(int sig) {
   running = 0;
   signal(sig, sigalarm_handler);
