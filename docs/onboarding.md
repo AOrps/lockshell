@@ -22,7 +22,8 @@
 - [ ] Interactivity
   - Get threat information from how an adversary uses the shell
   - Playback functionality (like cowrie or script or scriptreplay)
-- [ ] Testing / Assertions
+  - read for playback: https://github.com/util-linux/util-linux/tree/master/term-utils , https://github.com/util-linux/util-linux/blob/master/term-utils/script.c#L757 , https://github.com/util-linux/util-linux/blob/master/term-utils/scriptreplay.c
+- [x] Testing / Assertions
   - To validate that program runs as intended (for the most part)
 - [ ] Analytics
   - Research findings on whether or not pooling resources is more efficient
