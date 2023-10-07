@@ -31,3 +31,9 @@ endif
 ifneq (,$(wildcard *~))
 	rm *~
 endif
+
+
+clean-all: clean
+ifneq (,$(wildcard ./*.log))
+	rm ./*.log
+endif
