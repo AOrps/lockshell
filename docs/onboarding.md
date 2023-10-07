@@ -7,6 +7,11 @@
 
 ```
 
+## :target: Goals
+- The goal to get a running beta (MVP) for some tool utility are the following:
+  - [ ] Logging to a /var/log/ area
+  - [ ] Playback Functionality
+
 
 ## :technologist: Nice to haves / Features to implement
 - [x] Logging
@@ -29,6 +34,8 @@
   - Research findings on whether or not pooling resources is more efficient
 - [ ] Custom Config File
   - Setup Configurations to keep compiliation size (and exploitablity low)
+- [ ] OpenSSF Best Practices Badge Program
+  - https://www.bestpractices.dev/en
 
 ## :book: Resources
 - https://www.geeksforgeeks.org/header-files-in-c-cpp-and-its-uses/#

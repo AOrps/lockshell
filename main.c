@@ -8,35 +8,38 @@
 
 // TIMEOUT in Seconds
 #define LOSH_TIMEOUT 10
+#define OPTS_ARGS "hf:"
+
 
 volatile sig_atomic_t running = 1;
 
-int main() {
+int main(int argc, char* argv[]) {
 
   // Ensure it is set to running before it begins running
   assert (running==1);
-
+  
   /* stdout_logger("start", "someone was caught"); */
   file_logger("hit", "trapped someone", "./losh.log");
 
-  // handles
-  signal(SIGALRM, sigalarm_handler);
-
-  
   alarm(LOSH_TIMEOUT);
 
+  /* // handles alarm */
+  /* signal(SIGALRM, sigalarm_handler); */
+  
+  /* // handle interrupts */
+  /* signal(SIGINT, sigint_handler); */
+
+  /* // handle quits */
+  /* signal(SIGQUIT, sigquit_handler); */
+
+  /* // handle suspends */
+  /* signal(SIGTSTP, sigtstp_handler); */
+
+  /* // handle an abort */
+  /* signal(SIGABRT, sigabort_handler); */
+
+
    
-  // handle interrupts
-  signal(SIGINT, sigint_handler);
-
-  // handle quits
-  signal(SIGQUIT, sigquit_handler);
-
-  // handle suspends
-  signal(SIGTSTP, sigtstp_handler);
-
-
-  signal(SIGABRT, sigabort_handler);
   /* time_t *curr_time = NULL; */
   /* printf("%d", TIMER_ABSTIME); */
 
@@ -46,6 +49,25 @@ int main() {
     /* fp = fopen("playback-try.log","a");   */
     /* int c = getchar(); */
     /* printf("%c -> %d\n",(char)c, c); */
+
+  // handles alarm
+  signal(SIGALRM, sigalarm_handler);
+  
+  // handle interrupts
+  signal(SIGINT, sigint_handler);
+
+  // handle quits
+  signal(SIGQUIT, sigquit_handler);
+
+  // handle suspends
+  signal(SIGTSTP, sigtstp_handler);
+
+  // handle an abort
+  signal(SIGABRT, sigabort_handler);
+
+    
+    /* signal(SIGINT, sigwriter); */
+    /* /\* signal(SIGALRM, sigwriter); *\/ */
 
     /*
       Notes for me;
