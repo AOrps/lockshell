@@ -3,6 +3,16 @@
 #include <stdio.h>
 #include <signal.h>
 
+// Build Options
+
+// TIMEOUT in seconds
+#define LOSH_TIMEOUT 10
+// Logging File
+#define LOSH_LOG "./losh.log"
+// Playback on the Shell
+#define LOSH_PLAYBACK "./playback-%s.log"
+
+
 extern volatile sig_atomic_t running;
 
 // Signal Handlers

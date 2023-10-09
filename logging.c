@@ -40,3 +40,4 @@ void file_logger(const char* tag, const char* msg, const char* filename) {
   /* printf("%s [%s]: %s\n", ctime(&now), tag, msg);   */
 
 }
+
