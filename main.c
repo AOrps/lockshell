@@ -20,17 +20,16 @@ int main(int argc, char* argv[]) {
   struct timespec res;
   
   time_t curr = time(NULL);
-  char identifier[128];
+  char identifier[48];
+  char instance[64];
   clock_gettime(CLOCK_REALTIME,&res);
   long currNano = res.tv_nsec;
-  snprintf(identifier, 128, "%x-%ld.%ld", "%x",curr, currNano);
-  printf(LOSH_PLAYBACK, identifier);
-  
-  
-  exit(1);
+  snprintf(identifier, 48, "%x-%ld.%ld", "%x",curr, currNano);
+  snprintf(instance, 64, LOSH_PLAYBACK, identifier);
+  printf(instance);
   
   /* stdout_logger("start", "someone was caught"); */
-  file_logger("hit", "trapped someone", LOSH_LOG);
+  file_logger("hit", "trapped someone ", LOSH_LOG);
 
   alarm(LOSH_TIMEOUT);
 
@@ -39,6 +38,8 @@ int main(int argc, char* argv[]) {
     // handles alarm
     signal(SIGALRM, sigalarm_handler);
 
+    signal(
+    
     // handle interrupts
     signal(SIGINT, sigint_handler);
 
@@ -55,6 +56,9 @@ int main(int argc, char* argv[]) {
     
     continue;
   }
+
+
+  
   
   return 0;
 }
