@@ -1,0 +1,3 @@
+plugins:
+  gnu-complexity:
+    enabled: true
