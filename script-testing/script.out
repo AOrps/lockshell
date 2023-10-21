@@ -1,10 +1,0 @@
-Script started on 2023-10-07 16:39:42-04:00 [TERM="xterm-256color" TTY="/dev/pts/6" COLUMNS="99" LINES="54"]
-[3gH    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H    H  ]0;aorps@gerina:~/projects/lockshell/script-testing[?2004h[01;32m[aorps@gerina[01;37m ~/projects/lockshell/script-testing[01;32m]$[00m s[Kls
-[?2004lfile.tm  script.out
-]0;aorps@gerina:~/projects/lockshell/script-testing[?2004h[01;32m[aorps@gerina[01;37m ~/projects/lockshell/script-testing[01;32m]$[00m ca[K[Kecho ""[Cy"e"s"
-[?2004lyes
-]0;aorps@gerina:~/projects/lockshell/script-testing[?2004h[01;32m[aorps@gerina[01;37m ~/projects/lockshell/script-testing[01;32m]$[00m ^C[?2004l[?2004h[?2004l
-]0;aorps@gerina:~/projects/lockshell/script-testing[?2004h[01;32m[aorps@gerina[01;37m ~/projects/lockshell/script-testing[01;32m]$[00m [?2004l
-exit
-
-Script done on 2023-10-07 16:39:53-04:00 [COMMAND_EXIT_CODE="130"]
