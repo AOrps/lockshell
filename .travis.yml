@@ -6,7 +6,9 @@ compiler:
 before_script:
     - mkdir build
     - cd build
-    - make ..
+    - cp ../*.c .
+    - cp ../*.h .
+    - cp ../Makefile .
 
 script:
     - make
