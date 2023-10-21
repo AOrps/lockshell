@@ -37,8 +37,6 @@ int main(int argc, char* argv[]) {
 
     // handles alarm
     signal(SIGALRM, sigalarm_handler);
-
-    signal(
     
     // handle interrupts
     signal(SIGINT, sigint_handler);
