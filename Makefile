@@ -43,6 +43,12 @@ ifneq (,$(wildcard *~))
 	rm *~
 endif
 
+prune: clean
+ifneq (,$(wildcard *.log))
+	rm *.log
+endif
+
+#[ -f {} ] && rm {} && echo 'rm *.log'
 
 clean-all: clean
 ifneq (,$(wildcard ./*.log))
