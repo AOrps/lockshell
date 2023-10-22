@@ -1,4 +1,5 @@
 [![Losh Build](https://github.com/AOrps/lockshell/actions/workflows/losh-build.yml/badge.svg)](https://github.com/AOrps/lockshell/actions/workflows/losh-build.yml)
+![GitHub](https://img.shields.io/github/license/AOrps/lockshell)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c4b531524943f0cbdf78/maintainability)](https://codeclimate.com/github/AOrps/lockshell/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/c4b531524943f0cbdf78/test_coverage)](https://codeclimate.com/github/AOrps/lockshell/test_coverage)
 # lockshell
