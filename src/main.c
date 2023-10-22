@@ -30,7 +30,7 @@ int main(int argc, char* argv[]) {
   alarm(LOSH_TIMEOUT);
 
   while(running) {
-
+      
     // handles alarm
     signal(SIGALRM, sigalarm_handler);
     
