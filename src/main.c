@@ -25,7 +25,11 @@ int main(int argc, char* argv[]) {
 
   printf("[%s,%ld,%ld]\n",id.Unique, id.Epoch, id.Nanosec);
 
-  /* exit(0); */
+
+  
+  f_log("yes.log", &id, "no");
+  
+  exit(0);
   
   alarm(LOSH_TIMEOUT);
 

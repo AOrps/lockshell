@@ -11,6 +11,9 @@
 // Logging File
 #define LOSH_LOG "./losh.log"
 
+// Log Format (to put onto %s)
+#define LOG_FORMAT "%s-%ld-%ld"
+
 // Playback on the Shell
 #define LOSH_PLAYBACK "./playback-%s.log"
 
@@ -32,6 +35,7 @@ struct identifier {
     long Nanosec;
     char Unique[20];
 };
+void f_log(char*, struct identifier*, const char*);
 void stdout_logger(const char* tag, const char* message);
 void file_logger(const char* tag, const char* message, const char* filename);
 void new_id(struct identifier*);
