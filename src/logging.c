@@ -3,6 +3,15 @@
 #include <string.h>
 #include <stdlib.h>
 
+/*
+p_log: process start
+  - reqs: *identifier, time
+  - just alerts that a new 
+
+s_log: session start
+  - start new session
+ */
+
 void new_id(struct identifier* id) {
     char _id[20];
     time_t _epoch;
@@ -24,6 +33,16 @@ void new_id(struct identifier* id) {
     id->Epoch = _epoch;
     id->Nanosec = _nanosec;
 }
+
+// sess_id: get the filename for the session
+void sess_id(char session_id[], struct identifier* id) {
+    char log_identifier[48];
+
+    snprintf(log_identifier, 48, "%s-%ld.%ld", id->Unique, id->Epoch, id->Nanosec);
+
+    snprintf(session_id, 64, LOSH_PLAYBACK, log_identifier);
+}
+
 
 
 void f_log(char* filename, struct identifier *id, const char* msg) {
@@ -51,6 +70,23 @@ void f_log(char* filename, struct identifier *id, const char* msg) {
     fp = NULL;
 
 }
+
+// p_log: alerts that a new session has begun
+void p_log(struct identifier* id, char session_id[]) {
+
+    FILE *fp = NULL;
+
+    fp = fopen(LOSH_LOG, "a");
+    if(fp == NULL) {
+        perror("error with p_log, something with LOSH_LOG definition or fp stream");
+    }
+    fprintf(fp, "%ld.%ld,id:[%s],session at:[%s]\n", id->Epoch, id->Nanosec, id->Unique, session_id);
+    
+    
+    fclose(fp);
+    fp = NULL;
+}
+
 
 void stdout_logger(const char* tag, const char* msg) {
   time_t now = 0xdeadbeef;

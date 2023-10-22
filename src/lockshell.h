@@ -35,10 +35,13 @@ struct identifier {
     long Nanosec;
     char Unique[20];
 };
+void new_id(struct identifier*);
+void sess_id(char[], struct identifier*);
 void f_log(char*, struct identifier*, const char*);
+void p_log(struct identifier*, char[]);
 void stdout_logger(const char* tag, const char* message);
 void file_logger(const char* tag, const char* message, const char* filename);
-void new_id(struct identifier*);
+
 
 
 

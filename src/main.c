@@ -23,11 +23,18 @@ int main(int argc, char* argv[]) {
   struct identifier id;
   new_id(&id);
 
-  printf("[%s,%ld,%ld]\n",id.Unique, id.Epoch, id.Nanosec);
-
-
+  /* printf("[%s,%ld,%ld]\n",id.Unique, id.Epoch, id.Nanosec); //  DEBUG */
   
-  f_log("yes.log", &id, "no");
+  // session_log
+  char session_id[64];
+  sess_id(session_id, &id);
+
+ 
+  /* printf(">%s<\n", session_id); // DEBUG */
+
+  p_log(&id, session_id);
+  
+  /* f_log("yes.log", &id, "no"); */
   
   exit(0);
   
