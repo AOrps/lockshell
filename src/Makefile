@@ -4,7 +4,7 @@ CC = gcc
 CFLAGS = -g -Wall -pedantic -Og
 # Hardening Flags Resources : https://github.com/ossf/wg-best-practices-os-developers/blob/main/docs/Compiler-Hardening-Guides/Compiler-Options-Hardening-Guide-for-C-and-C%2B%2B.md
 CFLAGS_HARDEN = -Wall -Wextra -Wformat=2 -Wconversion -Wtrampolines -Werror -O1 -D_FORTIFY_SOURCE=3 -fstack-clash-protection -fstack-protector-strong -Wl,-z,noexecstack -fPIE -pie
-OBJS = src/main.c src/logging.c src/sigs.c src/lockshell.h
+OBJS = main.c logging.c sigs.c
 PROGS = compile
 
 
