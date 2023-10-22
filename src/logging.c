@@ -49,14 +49,17 @@ void new_id(struct identifier* id) {
     struct timespec res;
     long _nanosec;
 
+    // hacky way to get random alphanumeric characters from ambiguous memory
     snprintf(_id, 20, "%x", "%x");
 
+    // get unix epoch
     _epoch = time(NULL);
 
+    // get nanoseconds
     clock_gettime(CLOCK_REALTIME, &res);
     _nanosec = res.tv_nsec;
-    
-    
+
+    // set value to struct
     strcpy(id->Unique,_id);
     id->Epoch = _epoch;
     id->Nanosec = _nanosec;

@@ -19,33 +19,7 @@ int main(int argc, char* argv[]) {
   // Ensure it is set to running before it begins running
   assert (running==1);
 
-  // Instantiations
-  // todo:
-  // - get standard unix epoch time
-  // - get unix epoch time with nanosseconds for greater accuracy
-
-  /* struct timespec res; */
-
-  /* time_t curr = time(NULL); */
-  /* char identifier[48]; */
-  /* char instance[64]; */
-  /* clock_gettime(CLOCK_REALTIME,&res); */
-  /* long currNano = res.tv_nsec; */
-  /* snprintf(identifier, 48, "%x-%ld.%ld", "%x",curr, currNano); */
-  /* snprintf(instance, 64, LOSH_PLAYBACK, identifier); */
-  /* printf("%s\n",instance); */
-  
-  /* /\* stdout_logger("start", "someone was caught"); *\/ */
-  /* file_logger("hit", "trapped someone ", LOSH_LOG); */
-
-  /* struct Identifier id; */
-  /* char _id[20]; */
-  /* printf("%x\n"); */
-  /* snprintf(_id, 20, "%x", "%x"); */
-  /* id.Unique = _id; */
-  /* id.Epoch = curr; */
-  /* id.Nanosec = res.tv_nsec; */
-
+  // Identifier Struct
   struct identifier id;
   new_id(&id);
 
