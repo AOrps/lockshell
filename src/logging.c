@@ -2,6 +2,7 @@
 #include <time.h>
 #include <string.h>
 
+
 void stdout_logger(const char* tag, const char* msg) {
   time_t now = 0xdeadbeef;
   time(&now);
@@ -41,3 +42,22 @@ void file_logger(const char* tag, const char* msg, const char* filename) {
 
 }
 
+
+void new_id(struct identifier* id) {
+    char _id[20];
+    time_t _epoch;
+    struct timespec res;
+    long _nanosec;
+
+    snprintf(_id, 20, "%x", "%x");
+
+    _epoch = time(NULL);
+
+    clock_gettime(CLOCK_REALTIME, &res);
+    _nanosec = res.tv_nsec;
+    
+    
+    strcpy(id->Unique,_id);
+    id->Epoch = _epoch;
+    id->Nanosec = _nanosec;
+}

@@ -7,11 +7,12 @@
 
 volatile sig_atomic_t running = 1;
 
-struct Identifier {
-    char* Unique;
-    long Epoch;
-    long Nanosec;
-};
+/* struct Identifier { */
+/*     char* Unique; */
+/*     long Epoch; */
+/*     long Nanosec; */
+/* }; */
+
 
 int main(int argc, char* argv[]) {
 
@@ -23,31 +24,34 @@ int main(int argc, char* argv[]) {
   // - get standard unix epoch time
   // - get unix epoch time with nanosseconds for greater accuracy
 
-  struct timespec res;
+  /* struct timespec res; */
 
-  time_t curr = time(NULL);
-  char identifier[48];
-  char instance[64];
-  clock_gettime(CLOCK_REALTIME,&res);
-  long currNano = res.tv_nsec;
-  snprintf(identifier, 48, "%x-%ld.%ld", "%x",curr, currNano);
-  snprintf(instance, 64, LOSH_PLAYBACK, identifier);
-  printf("%s\n",instance);
+  /* time_t curr = time(NULL); */
+  /* char identifier[48]; */
+  /* char instance[64]; */
+  /* clock_gettime(CLOCK_REALTIME,&res); */
+  /* long currNano = res.tv_nsec; */
+  /* snprintf(identifier, 48, "%x-%ld.%ld", "%x",curr, currNano); */
+  /* snprintf(instance, 64, LOSH_PLAYBACK, identifier); */
+  /* printf("%s\n",instance); */
   
-  /* stdout_logger("start", "someone was caught"); */
-  file_logger("hit", "trapped someone ", LOSH_LOG);
+  /* /\* stdout_logger("start", "someone was caught"); *\/ */
+  /* file_logger("hit", "trapped someone ", LOSH_LOG); */
 
-  struct Identifier id;
-  char _id[20];
-  printf("%x\n");
-  /* snprintf(_id, 20, "%s",rand() % 16); */
-  id.Unique = _id;
-  id.Epoch = curr;
-  id.Nanosec = res.tv_nsec;
+  /* struct Identifier id; */
+  /* char _id[20]; */
+  /* printf("%x\n"); */
+  /* snprintf(_id, 20, "%x", "%x"); */
+  /* id.Unique = _id; */
+  /* id.Epoch = curr; */
+  /* id.Nanosec = res.tv_nsec; */
+
+  struct identifier id;
+  new_id(&id);
 
   printf("[%s,%ld,%ld]\n",id.Unique, id.Epoch, id.Nanosec);
 
-  exit(0);
+  /* exit(0); */
   
   alarm(LOSH_TIMEOUT);
 

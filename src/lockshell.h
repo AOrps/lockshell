@@ -7,8 +7,10 @@
 
 // TIMEOUT in seconds
 #define LOSH_TIMEOUT 3
+
 // Logging File
 #define LOSH_LOG "./losh.log"
+
 // Playback on the Shell
 #define LOSH_PLAYBACK "./playback-%s.log"
 
@@ -25,8 +27,14 @@ void sigterm_handler();
 void sigwriter(int);
 
 // Log Writing
+struct identifier {
+    long Epoch;
+    long Nanosec;
+    char Unique[20];
+};
 void stdout_logger(const char* tag, const char* message);
 void file_logger(const char* tag, const char* message, const char* filename);
+void new_id(struct identifier*);
 
 
 
