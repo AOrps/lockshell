@@ -13,6 +13,8 @@ volatile sig_atomic_t running = 1;
 /*     long Nanosec; */
 /* }; */
 
+struct identifier globalID;
+
 
 int main(int argc, char* argv[]) {
 
@@ -23,6 +25,8 @@ int main(int argc, char* argv[]) {
   struct identifier id;
   new_id(&id);
 
+  globalID = id;
+
   /* printf("[%s,%ld,%ld]\n",id.Unique, id.Epoch, id.Nanosec); //  DEBUG */
   
   // session_log
@@ -30,20 +34,21 @@ int main(int argc, char* argv[]) {
   sess_id(session_id, &id);
 
  
-  /* printf(">%s<\n", session_id); // DEBUG */
+  printf(">%s<\n", session_id); // DEBUG
 
   p_log(&id, session_id);
   
   /* f_log("yes.log", &id, "no"); */
-  
-  exit(0);
-  
+
   alarm(LOSH_TIMEOUT);
 
   while(running) {
       
     // handles alarm
     signal(SIGALRM, sigalarm_handler);
+    /* if(sigint_flag) { */
+    /*     printf("yo"); */
+    /* } */
     
     // handle interrupts
     signal(SIGINT, sigint_handler);
@@ -57,7 +62,7 @@ int main(int argc, char* argv[]) {
     // handle an abort
     signal(SIGABRT, sigabort_handler);
 
-    
+    flag_reset();
     
     continue;
   }

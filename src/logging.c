@@ -12,6 +12,7 @@ s_log: session start
   - start new session
  */
 
+
 void new_id(struct identifier* id) {
     char _id[20];
     time_t _epoch;
@@ -126,5 +127,23 @@ void file_logger(const char* tag, const char* msg, const char* filename) {
   /* printf("%s [%s]: %s\n", ctime(&now), tag, msg);   */
 
 }
+
+void file_logger2(const char* tag, const char* msg) {
+  FILE *fp = NULL;
+  char sessID[64];
+
+  sess_id(sessID, &globalID);
+  
+  
+  fp = fopen(sessID,"a");
+  if(fp == NULL) {
+    perror("error:");
+  }
+  fprintf(fp,"[%s]: %s\n", tag, msg);
+
+  fclose(fp);
+  fp = NULL;
+}
+
 
 
