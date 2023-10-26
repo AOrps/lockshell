@@ -42,8 +42,10 @@ int main(int argc, char* argv[]) {
 
   alarm(LOSH_TIMEOUT);
 
+  char chr;
+
   while(running) {
-      
+    
     // handles alarm
     signal(SIGALRM, sigalarm_handler);
     /* if(sigint_flag) { */
@@ -63,6 +65,14 @@ int main(int argc, char* argv[]) {
     signal(SIGABRT, sigabort_handler);
 
     flag_reset();
+
+    scanf("%c", &chr);
+    file_logger2("yes", chr);
+    
+    /* int c = getchar(); */
+    /* char *strin = NULL; */
+    /* file_logger2("char", (char*)snprintf(strin, 1, "%s", c)); */
+    
     
     continue;
   }

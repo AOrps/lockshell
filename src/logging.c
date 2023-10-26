@@ -129,6 +129,8 @@ void file_logger(const char* tag, const char* msg, const char* filename) {
 }
 
 void file_logger2(const char* tag, const char* msg) {
+  time_t now = 0xdeadbeef;
+  time(&now);
   FILE *fp = NULL;
   char sessID[64];
 
@@ -139,7 +141,7 @@ void file_logger2(const char* tag, const char* msg) {
   if(fp == NULL) {
     perror("error:");
   }
-  fprintf(fp,"[%s]: %s\n", tag, msg);
+  fprintf(fp,"%ld [%s]: %s\n", now, tag, msg);
 
   fclose(fp);
   fp = NULL;
