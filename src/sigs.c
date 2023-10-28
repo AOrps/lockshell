@@ -21,6 +21,8 @@ void sigtstp_handler() {
   printf("Caught SIGTSTP\n");
   running = 1;
   sigtstp_flag = 1;
+
+  file_logger2("tagger", "sigint");  
 }
 
 void sigquit_handler() {
