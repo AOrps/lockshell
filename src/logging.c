@@ -2,6 +2,7 @@
 #include <time.h>
 #include <string.h>
 #include <stdlib.h>
+#include <pthread.h>
 
 /*
 p_log: process start
@@ -81,7 +82,7 @@ void p_log(struct identifier* id, char session_id[]) {
     if(fp == NULL) {
         perror("error with p_log, something with LOSH_LOG definition or fp stream");
     }
-    fprintf(fp, "%ld.%ld,id:[%s],session at:[%s]\n", id->Epoch, id->Nanosec, id->Unique, session_id);
+    fprintf(fp, "time:%ld.%ld,id:[%s],session:[%s]\n", id->Epoch, id->Nanosec, id->Unique, session_id);
     
     
     fclose(fp);
