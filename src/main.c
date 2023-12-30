@@ -27,6 +27,7 @@ int main(int argc, char* argv[]) {
 
   globalID = id;
 
+  
   /* printf("[%s,%ld,%ld]\n",id.Unique, id.Epoch, id.Nanosec); //  DEBUG */
   
   // session_log

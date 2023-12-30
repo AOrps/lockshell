@@ -1,5 +1,6 @@
 #include "lockshell.h"
 #include <time.h>
+#include <time.h>
 #include <string.h>
 #include <stdlib.h>
 #include <pthread.h>
@@ -135,6 +136,13 @@ void file_logger2(const char* tag, const char* msg) {
   FILE *fp = NULL;
   char sessID[64];
 
+  
+  struct timespec res;
+  long _nanosec;
+  clock_gettime(CLOCK_REALTIME, &res);
+  _nanosec = res.tv_nsec;
+  
+  
   sess_id(sessID, &globalID);
   
   
@@ -142,7 +150,7 @@ void file_logger2(const char* tag, const char* msg) {
   if(fp == NULL) {
     perror("error:");
   }
-  fprintf(fp,"%ld [%s]: %s\n", now, tag, msg);
+  fprintf(fp,"%ld.%ld [%s]: %s\n", now, _nanosec, tag, msg);
 
   fclose(fp);
   fp = NULL;
