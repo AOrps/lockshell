@@ -7,12 +7,6 @@
 
 volatile sig_atomic_t running = 1;
 
-/* struct Identifier { */
-/*     char* Unique; */
-/*     long Epoch; */
-/*     long Nanosec; */
-/* }; */
-
 struct identifier globalID;
 
 
@@ -34,22 +28,16 @@ int main(int argc, char* argv[]) {
   char session_id[64];
   sess_id(session_id, &id);
 
- 
-  printf(">%s<\n", session_id); // DEBUG
+   /* printf(">%s<\n", session_id); // DEBUG */
 
   p_log(&id, session_id);
   
-  /* f_log("yes.log", &id, "no"); */
-
   alarm(LOSH_TIMEOUT);
 
   while(running) {
     
     // handles alarm
     signal(SIGALRM, sigalarm_handler);
-    /* if(sigint_flag) { */
-    /*     printf("yo"); */
-    /* } */
     
     // handle interrupts
     signal(SIGINT, sigint_handler);
@@ -62,16 +50,6 @@ int main(int argc, char* argv[]) {
 
     // handle an abort
     signal(SIGABRT, sigabort_handler);
-
-    /* flag_reset(); */
-
-    /* scanf("%c", &chr); */
-    /* file_logger2("yes", chr); */
-    
-    /* int c = getchar(); */
-    /* char *strin = NULL; */
-    /* file_logger2("char", (char*)snprintf(strin, 1, "%s", c)); */
-    
     
     continue;
   }
