@@ -3,8 +3,25 @@
 
 ## :monocle_face: State Diagram
 <!-- https://mermaid.js.org/syntax/stateDiagram.html -->
+
+### Log Architecture
 ```mermaid
 
+```
+
+### Program Architecture
+```mermaid
+---
+title: Simple sample
+---
+stateDiagram-v2
+    [*] --> Main
+    Still --> [*]
+
+    Still --> Moving
+    Moving --> Still
+    Moving --> Crash
+    Crash --> [*]
 ```
 
 ## :target: Goals
