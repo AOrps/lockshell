@@ -1,26 +1,9 @@
-<!-- [![Losh Build](https://github.com/AOrps/lockshell/actions/workflows/losh-build.yml/badge.svg)](https://github.com/AOrps/lockshell/actions/workflows/losh-build.yml) -->
+[![Losh Build](https://github.com/AOrps/lockshell/actions/workflows/losh-build.yml/badge.svg)](https://github.com/AOrps/lockshell/actions/workflows/losh-build.yml)
 ![GitHub](https://img.shields.io/github/license/AOrps/lockshell)
 [![Maintainability](https://api.codeclimate.com/v1/badges/c4b531524943f0cbdf78/maintainability)](https://codeclimate.com/github/AOrps/lockshell/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/c4b531524943f0cbdf78/test_coverage)](https://codeclimate.com/github/AOrps/lockshell/test_coverage)
 # lockshell
-- Shell using signal magic to gather threat intel
-
-## Logo
-```
-         .-"""-.
-        / .---. \
-       / /     \ \
-       | |     | |
-       | |.-""-. |
-       / ` .::::.`\
-      ||| ::/  \:: \
-	  ||| :<    >: |
-      ||| ::\__/:: /
-	   \\\ '::::' /
-aorps   `-':-..-'`
-
-```
-
+- Shell without the fun and only pain
 <!-- 
 ## :mag: Manual
 
@@ -30,7 +13,8 @@ aorps   `-':-..-'`
 -->
 ## :hammer: How to Build
 ```bash
-cargo build
+# To build file
+make
 ```
 
 ## :alembic: Usage
