@@ -26,34 +26,26 @@ stateDiagram-v2
 
 ## :target: Goals
 - The goal to get a running beta (MVP) for some tool utility are the following:
-  - [ ] Logging to a /var/log/ area
+  - [ ] Logging to a `/var/log/` area
   - [ ] Playback Functionality
 
 
 ## :technologist: Nice to haves / Features to implement
-- [x] Logging
-  - Eventually to be picked up from a SIEM
-  - Writes to [./losh.log], however segfault when writing to a area that doesn't exist
+- [ ] Logging
 - [ ] Constraints 
   - [x] Time constraint to prevent generating a bunch of useless files running this program
-  - [ ] Isolated Memory but not a memory hog
-- [ ] VM / Container Isolation
-  - Prevent Shell Escape
-- [ ] Taunting art (like flipper or pwnagochi)
-  - Bc funny (and c graphics seems cool)
 - [ ] Interactivity
   - Get threat information from how an adversary uses the shell
   - Playback functionality (like cowrie or script or scriptreplay)
   - read for playback: https://github.com/util-linux/util-linux/tree/master/term-utils , https://github.com/util-linux/util-linux/blob/master/term-utils/script.c#L757 , https://github.com/util-linux/util-linux/blob/master/term-utils/scriptreplay.c
-- [x] Testing / Assertions
-  - To validate that program runs as intended (for the most part)
-- [ ] Analytics
-  - Research findings on whether or not pooling resources is more efficient
-- [ ] Custom Config File
-  - Setup Configurations to keep compiliation size (and exploitablity low)
 - [ ] OpenSSF Best Practices Badge Program
   - https://www.bestpractices.dev/en
 
 ## :book: Resources
-- https://www.geeksforgeeks.org/header-files-in-c-cpp-and-its-uses/#
-- https://developerinsider.co/simple-and-static-assertion-assert-in-c-programming-language/
+- General:
+  - **https://blog.logrocket.com/guide-signal-handling-rust/#signal-handling-with-tokio**
+  - https://rust-cli.github.io/book/in-depth/signals.html
+  - https://docs.rs/signal-hook/latest/signal_hook/#modules
+  - https://tokio.rs/tokio/tutorial/hello-tokio
+- Library Internals:
+  - https://github.com/tokio-rs/tokio/blob/master/tokio/src/signal/unix.rs
