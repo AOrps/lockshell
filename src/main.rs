@@ -7,6 +7,8 @@ const LOG_FILE: &str = "signals.log";
 async fn main() -> Result<(), Box<dyn std::error::Error>> { 
     let mut sigint = signal(SignalKind::interrupt())?;
 
+    // let mut sigquit: Signal = signal(SignalKind:
+
     match sigint.recv().await {
 	Some(()) => println!("Received SIGINT signal"),
 	None => eprintln!("Stream terminated before receiving SIGINT signal"),
