@@ -10,6 +10,7 @@ loshh
 
 # Directories
 env/
+target/
 
 # Log Files
 *.log
